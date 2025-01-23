@@ -40,10 +40,11 @@ export default function Home() {
       console.log(data);
     }
   };
-  setTimeout(() => {
+
+  const getCounts = async () => {
     getCount();
     getCount2();
-  }, 5000);
+  };
 
   const settingCount = async () => {
     const supabase = await createClient();
@@ -95,6 +96,9 @@ export default function Home() {
       </div>
       <div className={Styles.counter}>
         <p>Totalt antall slurker count: {count + count2}</p>
+        <button className={Styles.button} onClick={getCounts}>
+          HENT SCORE
+        </button>
         <button className={Styles.button} onClick={handleSignOut}>
           LOGG UT
         </button>
