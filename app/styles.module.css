@@ -1,0 +1,60 @@
+.header {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff0000; /* Red */
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-align: center;
+}
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #00ff00; /* Green */
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  justify-self: center;
+  margin-top: 50px;
+  gap: 30px;
+  color: black;
+}
+.loginContainer form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #00ff00; /* Green */
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  justify-self: center;
+  margin-top: 50px;
+}
+
+.counter p {
+  font-size: 18px;
+  color: #0000ff; /* Blue */
+  margin-bottom: 10px;
+}
+
+.button {
+  background-color: #ffff00; /* Yellow */
+  color: #000000; /* Black */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #ff00ff; /* Magenta */
+}
