@@ -18,7 +18,9 @@ export default function Home() {
   const getCount = async () => {
     const supabase = await createClient();
     const { data, error } = await supabase.from("counts").select().eq("id", 1);
-    setCount(data[0].count);
+    if (data && data[0]) {
+      setCount(data[0].count);
+    }
     if (error) {
       console.error("error", error);
     } else {
@@ -29,7 +31,9 @@ export default function Home() {
   const getCount2 = async () => {
     const supabase = await createClient();
     const { data, error } = await supabase.from("counts").select().eq("id", 2);
-    setCount2(data[0].count);
+    if (data && data[0]) {
+      setCount2(data[0].count);
+    }
     if (error) {
       console.error("error", error);
     } else {
