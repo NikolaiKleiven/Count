@@ -6,7 +6,6 @@ import Styles from "./styles.module.css";
 import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/client";
 import { getCount } from "@/utils/supabase/updateCount";
-import Error from "next/error";
 
 export default function Home() {
   const [count, setCount] = useState(0);
