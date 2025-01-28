@@ -6,6 +6,7 @@ import Styles from "./styles.module.css";
 import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/client";
 import { getCount } from "@/utils/supabase/updateCount";
+import Error from "next/error";
 
 export default function Home() {
   const [count, setCount] = useState(0);
@@ -20,6 +21,9 @@ export default function Home() {
     } = await supabase.auth.getUser();
     console.log("Data from getSession:", user);
     const { error } = await supabase.auth.signOut();
+    if (error) {
+      console.error("Error in handleSignOut:", error.message);
+    }
     redirect("/");
   };
 
@@ -33,8 +37,8 @@ export default function Home() {
       } else {
         console.log("No data found in the counts table");
       }
-    } catch (err: any) {
-      console.error("Error in handleGetCount:", err.message);
+    } catch (error) {
+      console.error("Error in handleGetCount:", error);
     }
   };
 
@@ -49,7 +53,7 @@ export default function Home() {
     }
     setCount(0);
     setCount2(0);
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from("counts")
       .upsert([
         { id: 1, count: 0 },
