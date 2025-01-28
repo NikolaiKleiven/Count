@@ -23,7 +23,7 @@ export default function Home() {
     if (error) {
       console.error("Error in handleSignOut:", error.message);
     }
-    redirect("/");
+    redirect("/login");
   };
 
   const handleGetCount = async () => {
