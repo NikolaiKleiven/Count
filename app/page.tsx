@@ -17,10 +17,6 @@ export default function Home() {
   const bgPosition = 200 - (count + count2);
 
   const handleSignOut = async () => {
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-    console.log("Data from getSession:", user);
     const { error } = await supabase.auth.signOut();
     if (error) {
       console.error("Error in handleSignOut:", error.message);
@@ -32,9 +28,9 @@ export default function Home() {
     try {
       const data = await getCount();
 
-      if (data && data.length > 0) {
-        setCount(data[0]?.count || 0);
-        setCount2(data[1]?.count || 0);
+      if (data && data.length > 0 && data[0]?.[0] && data[1]?.[0]) {
+        setCount(data[0][0].count);
+        setCount2(data[1][0].count);
       } else {
         console.log("No data found in the counts table");
       }
@@ -98,13 +94,11 @@ export default function Home() {
       .eq("id", 1);
     if (error) {
       console.error("Error in settingCount:", error.message);
-    } else {
-      console.log("Data updated in settingCount:", data);
     }
+    return data;
   };
 
   const settingCount2 = async () => {
-    console.log(email);
     if (email !== "tull@gmail.com") {
       alert("Jeg skal knekke deg som Knerten! Du er ikke Anne Cath. Vestly!");
       return;
@@ -116,9 +110,8 @@ export default function Home() {
       .eq("id", 2);
     if (error) {
       console.error("Error in settingCount2:", error.message);
-    } else {
-      console.log("Data updated in settingCount2:", data);
     }
+    return data;
   };
 
   return (
