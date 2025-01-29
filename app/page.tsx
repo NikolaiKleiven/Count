@@ -33,8 +33,8 @@ export default function Home() {
       const data = await getCount();
 
       if (data && data.length > 0) {
-        setCount(data[1]?.count || 0);
-        setCount2(data[0]?.count || 0);
+        setCount(data[0]?.count || 0);
+        setCount2(data[1]?.count || 0);
       } else {
         console.log("No data found in the counts table");
       }
