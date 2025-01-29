@@ -112,8 +112,9 @@
   .counter {
     width: 90%;
   }
+
   .cup {
-    top: 85%;
+    top: 100%;
     left: 50%;
   }
 }
