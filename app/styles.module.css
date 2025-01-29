@@ -108,10 +108,10 @@
 @media screen and (max-width: 666px) {
   .loginContainer {
     justify-self: center;
-    width: 90%;
+    width: 100%;
   }
   .counter {
-    width: 90%;
+    width: 100%;
   }
 
   .cup {
