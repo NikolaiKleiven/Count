@@ -1,6 +1,7 @@
 "use client";
 
 import { BiBeer, BiDrink, BiSolidTrophy } from "react-icons/bi";
+import { FaWineBottle } from "react-icons/fa";
 import React, { useState } from "react";
 import Styles from "./styles.module.css";
 import { redirect } from "next/navigation";
@@ -13,6 +14,7 @@ export default function Home() {
   const [firstRender, setFirstRender] = useState(true);
   const [email, setEmail] = useState("");
   const supabase = createClient();
+  let bgPosition = 200 - (count + count2);
 
   const handleSignOut = async () => {
     const {
@@ -168,6 +170,10 @@ export default function Home() {
           RESET
         </button>
       </div>
+      <div
+        className={Styles.cup}
+        style={{ backgroundPosition: `0 ${bgPosition}px` }}
+      ></div>
     </>
   );
 }

@@ -72,3 +72,48 @@
 .buttonReset:hover {
   background-color: #ff0000; /* Magenta */
 }
+
+.cup {
+  position: absolute;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 200px;
+  border: 6px solid #262;
+  border-top: 2px solid transpartent;
+  border-radius: 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-image: url("/images/beer.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: animate 5s linear infinite;
+  transition: all 4s ease;
+  box-shadow: 0 0 0 6px #fff, 0 20px 35px rgba(0, 0, 0, 1);
+}
+
+.cup:before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 100px;
+  border: 6px solid #fff;
+  right: -68px;
+  top: 30px;
+  border-top-right-radius: 35px;
+  border-bottom-right-radius: 35px;
+}
+
+@media screen and (max-width: 666px) {
+  .loginContainer {
+    width: 90%;
+  }
+  .counter {
+    width: 90%;
+  }
+  .cup {
+    top: 85%;
+    left: 50%;
+  }
+}
